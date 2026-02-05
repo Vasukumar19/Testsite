@@ -1,0 +1,61 @@
+:root {
+    --primary: #6366f1;
+    --primary-light: #818cf8;
+    --accent: #14b8a6;
+    --dark: #1e293b;
+    --light: #f8fafc;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.brand { font-size: 1.6rem; font-weight: 800; text-decoration: none; color: var(--dark); }
+.brand span {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Custom Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    transition: 0.3s ease;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4); }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #a855f7 50%, var(--accent) 100%);
+    color: white;
+    padding: 100px 0;
+}
+.hero-small { background: var(--primary); padding: 60px 0; }
+
+/* Card Animations & Hover */
+.card-hover {
+    transition: all 0.4s ease;
+    border-radius: 16px !important;
+    opacity: 0; /* Handled by JS scroll animation */
+    transform: translateY(30px);
+}
+.card-hover.show { opacity: 1; transform: translateY(0); }
+.card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; }
+
+.profile-circle { width: 70px; height: 70px; border-radius: 50%; }
+.bg-accent { background-color: var(--accent) !important; }
+
+/* Animations */
+.animate-fade-in { animation: fadeInUp 0.8s ease; }
+.animate-fade-in-delay { animation: fadeInUp 0.8s ease 0.2s both; }
+.animate-fade-in-delay-2 { animation: fadeInUp 0.8s ease 0.4s both; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
